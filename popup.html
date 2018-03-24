@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="popup.css"/>
+</head>
+<body>
+    <div id="header">
+        <h1>Form Inspector</h1>
+    </div>
+
+    <div id="main">
+        <div id="controls">
+            <a id="toggle-test-options" href="#">Test mode options</a>
+            <br>
+            <input type="checkbox" id="toggle-test-mode" data-model="testMode"> Test mode
+        </div>
+
+        <div id="test-content" style="display: none;">
+            <h2 class="form-title" >Test options</h2>
+            <p>These options allow for quick form testing by setting default form values to be used upon submission.</p>
+            <label for="test-text">Text</label>
+            <input type="text" id="test-text" data-model="testText" placeholder="e.g. This is a test">
+            <br>
+
+            <label for="test-select">Choose drop down #</label>
+            <input type="number" id="test-select" data-model="testSelect" value="0">
+            <br>
+
+            <label for="test-email">Email</label>
+            <input type="email" id="test-email" data-model="testEmail" placeholder="e.g. email@example.com">
+            <br>
+
+            <label for="test-phone">Phone</label>
+            <input type="text" id="test-phone" data-model="testPhone" placeholder="e.g. (555) 555-5555">
+            <br>
+
+            <label for="test-zip">Zip code</label>
+            <input type="text" id="test-zip" data-model="testZip" placeholder="e.g. 55555">
+            <br>
+
+            <label for="test-override">Overwrite existing values</label>
+            <input type="checkbox" id="test-override" data-model="testOverride">
+            <br>
+
+            <label for="test-hidden">Ignore hidden inputs</label>
+            <input type="checkbox" id="test-hidden" data-model="testIgnoreHidden">
+            <br>
+
+            <label for="test-honeypots">Honey pot ID's/names (comma separated)</label>
+            <input type="text" id="test-honeypots" data-model="testHoneypots" placeholder="e.g. honey_pot,fake_field">
+            <br>
+
+            <button id="test-options-submit" class="btn">Save</button>
+        </div>
+
+        <div id="inspect-content"></div>
+    </div>
+
+    <div id="footer">
+        <p class="made-with">made with &#x266B; in Nashville</p>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>

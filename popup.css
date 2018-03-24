@@ -1,0 +1,123 @@
+/* IBM Plex Sans Condensed font */
+/* latin-ext */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('IBM Plex Sans'), local('IBMPlexSans'), url(https://fonts.gstatic.com/s/ibmplexsans/v2/zYXgKVElMYYaJe8bpLHnCwDKhd_eFaxOedfTDw.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('IBM Plex Sans'), local('IBMPlexSans'), url(https://fonts.gstatic.com/s/ibmplexsans/v2/zYXgKVElMYYaJe8bpLHnCwDKhdHeFaxOedc.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    margin: 0;
+}
+
+a {
+    outline: none;
+}
+
+#test-content {
+    margin-bottom: 30px;
+}
+
+#inspect-content label {
+    display: inline-block;
+    font-weight: bold;
+    width: 35%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: 10px;
+}
+
+#test-content label {
+    display: inline-block;
+    font-weight: bold;
+    width: 35%;
+    margin-right: 10px;
+}
+
+#inspect-content input,
+#inspect-content select,
+#test-content input,
+#test-content select {
+    display: inline-block;
+    width: 55%;
+    padding: 5px;
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+#header {
+    background-color: #326273;
+    color: #fff;
+    text-align: center;
+}
+
+#header h1 {
+    margin: 0;
+    padding: 1rem;
+    font-size: 1rem;
+}
+
+#footer {
+    padding: 0.25rem;
+    text-align: center;
+}
+
+#footer .made-with {
+    font-size: 0.75rem;
+    color: #aaa;
+}
+
+#controls {
+    text-align: center;
+}
+
+#main {
+    width: 350px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    padding: 10px;
+}
+
+.btn {
+    padding: 10px;
+    color: #fff;
+    background-color: #aaa;
+    border-style: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.btn-form-submit {
+    background-color: #5c9aed;
+}
+
+.form-title {
+
+}
+
+.form-action-title {
+    padding: 0px;
+    padding-bottom: 5px;
+    margin: 0px;
+    margin-bottom: 10px;
+    color: #8f8f8f;
+    font-size: 0.75rem;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-bottom: 1px dotted #aaa;
+}
