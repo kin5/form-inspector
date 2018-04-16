@@ -25,6 +25,12 @@ a {
     outline: none;
 }
 
+input,
+select,
+button {
+    outline: none;
+}
+
 #test-content {
     margin-bottom: 30px;
 }
@@ -73,11 +79,13 @@ a {
 #footer {
     padding: 0.25rem;
     text-align: center;
+    font-size: 0.75rem;
 }
 
-#footer .made-with {
-    font-size: 0.75rem;
+#footer a {
     color: #aaa;
+    text-decoration: none;
+    border-bottom: 1px dotted #aaa;
 }
 
 #controls {
@@ -100,8 +108,16 @@ a {
     cursor: pointer;
 }
 
+.btn:active {
+    background-color: #888;
+}
+
 .btn-form-submit {
     background-color: #5c9aed;
+}
+
+.btn-form-submit:active {
+    background-color: #4d83ca;
 }
 
 .form-title {
@@ -120,4 +136,9 @@ a {
     overflow: hidden;
     text-overflow: ellipsis;
     border-bottom: 1px dotted #aaa;
+}
+
+.hidden-control {
+    color: #999;
+    font-style: italic;
 }

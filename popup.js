@@ -66,6 +66,10 @@ var generateForm = function(formData, formLanding) {
         label.innerHTML = input.label;
         label.for = (input.id || input.name);
 
+        if(input.type == "hidden") {
+            label.className = "hidden-control";
+        }
+
         var br = document.createElement("br");
 
         formLanding.appendChild(label);
@@ -256,5 +260,9 @@ document.addEventListener("DOMContentLoaded", function() {
             console.log("> Options saved");
             fetchOptions();
         });
+    });
+
+    document.getElementById("github-link").addEventListener("click", function() {
+        chrome.tabs.create({ url: "https://github.com/kin5/form-inspector" });
     });
 });
