@@ -126,4 +126,29 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         console.log(form);
         sendResponse({ event: "submitResponse" });
     }
+    else if(request.event == "highlightForm") {
+        var forms = document.querySelectorAll("form");
+
+        for(var i=0; i<forms.length; i++) {
+            forms[i].style.outlineStyle = "";
+            forms[i].style.outlineWidth = "";
+            forms[i].style.outlineColor = "";
+        }
+
+        if(request.data.formIndex !== null) {
+            var form = forms[request.data.formIndex];
+
+            form.style.outlineStyle = "solid";
+            form.style.outlineWidth = "3px";
+            form.style.outlineColor = "rgba(255, 0, 0, 0.75)";
+            form.style.outlineOffset = "5px";
+
+            if(request.data.scrollTo) {
+                window.scrollTo({
+                    top: form.offsetTop - 20,
+                    behavior: "smooth"
+                });
+            }
+        }
+    }
 });

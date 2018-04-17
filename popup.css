@@ -138,6 +138,10 @@ button {
     border-bottom: 1px dotted #aaa;
 }
 
+.form-header {
+    cursor: pointer;
+}
+
 .hidden-control {
     color: #999;
     font-style: italic;

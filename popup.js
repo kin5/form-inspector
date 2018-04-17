@@ -12,15 +12,29 @@ var globalOptions = {
 };
 
 var generateForm = function(formData, formLanding) {
+    var formHeader = document.createElement("div");
+    formHeader.className = "form-header";
+    formHeader.addEventListener("click", function() {
+        this.sendHighlightRequest({ scrollTo: true, formIndex: formData.index });
+    }.bind(this));
+    formHeader.addEventListener("mouseenter", function() {
+        this.sendHighlightRequest({ scrollTo: false, formIndex: formData.index });
+    }.bind(this));
+    formHeader.addEventListener("mouseleave", function() {
+        this.sendHighlightRequest({ formIndex: null });
+    }.bind(this));
+
     var formTitle = document.createElement("h2");
     formTitle.className = "form-title";
     formTitle.innerHTML = "Form " + (formData.index + 1);
-    formLanding.appendChild(formTitle);
+    formHeader.appendChild(formTitle);
 
     var formActionTitle = document.createElement("p");
     formActionTitle.className = "form-action-title";
     formActionTitle.innerHTML = (formData.method ? formData.method.toUpperCase() + " to " : "") + (formData.action || "");
-    formLanding.appendChild(formActionTitle);
+    formHeader.appendChild(formActionTitle);
+
+    formLanding.appendChild(formHeader);
 
     var honeyPots = globalOptions.testHoneypots.split(",");
     // Add common honey pots such as recaptcha by default
@@ -164,6 +178,14 @@ var sendUpdateRequest = function(event) {
 var sendSubmitRequest = function(event) {
     chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
         chrome.tabs.sendMessage(tabs[0].id, { event: "submitRequest", data: event }, function(response) {
+            console.log(response);
+        });
+    });
+};
+
+var sendHighlightRequest = function(event) {
+    chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
+        chrome.tabs.sendMessage(tabs[0].id, { event: "highlightForm", data: event }, function(response) {
             console.log(response);
         });
     });
